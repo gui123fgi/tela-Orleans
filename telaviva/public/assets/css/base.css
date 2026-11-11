@@ -1,0 +1,28 @@
+:root { --accent:#3b82f6; --accent-2:#60a5fa; --bg:#07090d; --panel:#0d1117; --line:#1c232d; --danger:#ef4444; --text:#e8edf4; --muted:#8b97a8; --radius:12px; }
+*,*::before,*::after { box-sizing:border-box; margin:0; }
+html,body { height:100%; }
+body { background:var(--bg); color:var(--text); font:15px/1.5 Inter,system-ui,-apple-system,"Segoe UI",sans-serif; -webkit-font-smoothing:antialiased; }
+[hidden] { display:none !important; }
+button,input { font:inherit; color:inherit; }
+button { cursor:pointer; border:0; background:none; }
+svg { width:1em; height:1em; flex:none; }
+.logo { height:34px; width:auto; }
+.muted { color:var(--muted); font-size:13px; }
+.label { display:block; color:var(--muted); font-size:11px; letter-spacing:.08em; font-weight:600; }
+.label--icon { display:flex; align-items:center; gap:6px; margin:22px 0 10px; }
+
+input { width:100%; height:42px; padding:0 14px; background:#0a0e14; border:1px solid var(--line); border-radius:10px; outline:0; transition:.15s; }
+input:focus { border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent); }
+
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:42px; padding:0 18px; border-radius:10px; font-weight:600; font-size:14px; transition:.15s; }
+.btn--primary { background:var(--accent); color:#fff; width:100%; } .btn--primary:hover { filter:brightness(1.1); }
+.btn--ghost,.btn--outline { border:1px solid var(--line); background:#0a0e14; } .btn--ghost:hover,.btn--outline:hover { border-color:var(--accent); }
+.btn--outline { width:100%; } .btn--sm { width:auto; height:36px; }
+.link { display:inline-flex; align-items:center; gap:8px; color:var(--muted); font-size:13px; padding:6px 10px; border-radius:8px; } .link:hover { color:var(--text); background:#ffffff0d; }
+.link--block { width:100%; justify-content:flex-start; margin-top:6px; }
+
+.avatar { display:grid; place-items:center; width:26px; height:26px; border-radius:50%; background:#1a2230; color:var(--muted); font-size:11px; font-weight:700; flex:none; }
+.avatar--lg { width:42px; height:42px; font-size:13px; background:#142033; color:var(--accent-2); }
+.tag { font-size:9px; font-weight:700; letter-spacing:.06em; padding:2px 6px; border-radius:6px; background:#1a2230; color:var(--muted); }
+.tag--live { background:var(--danger); color:#fff; }
+.error,.alert { color:#fca5a5; background:#7f1d1d40; border:1px solid #7f1d1d; padding:10px 12px; border-radius:10px; font-size:13px; }

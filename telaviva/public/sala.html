@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sala</title>
+  <link rel="icon" href="/assets/img/logo.svg">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/room.css">
+</head>
+<body class="room">
+  <header class="topbar">
+    <img data-logo class="logo" alt="">
+    <div class="topbar__actions">
+      <button class="link" id="btnClose" hidden><i data-icon="power"></i>Encerrar sala</button>
+      <button class="link" id="btnLeave"><i data-icon="logout"></i>Sair</button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="side">
+      <small class="label">SALA</small>
+      <h2 id="code">—</h2>
+      <p class="status" id="status">Conectando…</p>
+      <button class="btn btn--outline" id="btnCopy"><i data-icon="copy"></i> Copiar link</button>
+      <button class="link link--block" id="btnRotate" hidden><i data-icon="refresh"></i> Trocar link da sala</button>
+      <small class="label label--icon"><i data-icon="users"></i> PARTICIPANTES — <span id="count">0</span></small>
+      <ul class="peers" id="peers"></ul>
+    </aside>
+    <section class="stage">
+      <div class="stage__box">
+        <div class="empty" id="empty">
+          <i data-icon="monitor" class="empty__icon"></i>
+          <strong data-t="room.emptyTitle"></strong>
+          <span data-t="room.emptyHint"></span>
+        </div>
+        <video id="screen" autoplay playsinline hidden></video>
+        <div class="live" id="live" hidden>
+          <span class="tag tag--live">AO VIVO</span><span id="liveText"></span>
+          <button class="iconbtn" id="btnFull" title="Tela cheia"><i data-icon="expand"></i></button>
+        </div>
+        <p class="alert" id="alert" hidden></p>
+      </div>
+      <nav class="dock">
+        <button class="dock__btn" id="btnMic" title="Microfone"><i></i></button>
+        <button class="dock__btn" id="btnDeaf" title="Áudio da sala"><i></i></button>
+        <button class="dock__btn" id="btnShare" title="Compartilhar tela"><i data-icon="monitor"></i></button>
+        <button class="dock__btn dock__btn--danger" id="dockLeave" title="Sair"><i data-icon="x"></i></button>
+      </nav>
+    </section>
+  </div>
+  <div class="modal" id="modal" hidden>
+    <div class="modal__box">
+      <h3>Encerrar sala?</h3>
+      <p class="muted">Todos os participantes serão desconectados da sala.</p>
+      <div class="modal__actions">
+        <button class="link" id="modalCancel">Cancelar</button>
+        <button class="btn btn--primary btn--sm" id="modalConfirm">Encerrar</button>
+      </div>
+    </div>
+  </div>
+  <div id="voices" hidden></div>
+  <script type="module" src="/assets/js/pages/room.js"></script>
+</body>
+</html>
